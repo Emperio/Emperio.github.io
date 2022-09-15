@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://docs.microsoft.com/zh-tw/windows/wsl/install -->
+<html class="hasSidebar hasPageActions hasBreadcrumb conceptual has-default-focus js-focus-visible theme-light" lang="zh-tw" dir="ltr" data-css-variable-support="true" data-authenticated="false" data-auth-status-determined="true" data-target="docs" x-ms-format-detection="none" data-js-focus-visible=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="安裝 WSL">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://docs.microsoft.com/zh-tw/windows/wsl/install">
+			<meta property="og:description" content="使用 命令安裝 Windows 子系統 Linux 版 wsl --install。 在您的 Windows 電腦上使用 Bash 終端機，由您慣用的 Linux 散發套件執行 - Ubuntu、Debian、SUSE、系統、Fedora、Pengwin、Alpine 等等。">
+
+	<meta property="og:image" content="https://docs.microsoft.com/en-us/media/logos/logo-ms-social.png">
+
+	<meta property="og:image:alt" content="Microsoft Logo">
+
+	<meta name="twitter:card" content="summary">
+
+	<meta name="twitter:site" content="@docsmsft">
+
+	<meta name="color-scheme" content="light dark">
+
+
+	<meta name="adobe-target" content="true">
+<meta name="author" content="craigloewen-msft">
+<meta name="breadcrumb_path" content="/windows/wsl/breadcrumb/toc.json">
+<meta name="depot_name" content="WS.wsl">
+<meta name="description" content="使用 命令安裝 Windows 子系統 Linux 版 wsl --install。 在您的 Windows 電腦上使用 Bash 終端機，由您慣用的 Linux 散發套件執行 - Ubuntu、Debian、SUSE、系統、Fedora、Pengwin、Alpine 等等。">
+<meta name="document_id" content="0cc9a77f-e6a1-a719-c337-7ff7506a1ac8">
+<meta name="document_version_independent_id" content="7ed8fb81-5b8f-4d56-7b89-bf600ce6080a">
+<meta name="gitcommit" content="https://github.com/MicrosoftDocs/WSL/blob/b9d7be4e4a29b597a5a1f4e2e434bbb929085964/WSL/install.md">
+<meta name="loc_file_id" content="Github-54581275.live.WS.wsl.install.md">
+<meta name="loc_source_id" content="Github-54581275#live">
+<meta name="loc_version" content="2022-08-12T17:44:01.3812464Z">
+<meta name="locale" content="zh-tw">
+<meta name="ms.author" content="crloewen">
+<meta name="ms.contentlocale" content="zh-tw">
+<meta name="ms.custom" content="seo-windows-dev">
+<meta name="ms.date" content="11/22/2021">
+<meta name="ms.prod" content="dev-environment">
+<meta name="ms.technology" content="windows-subsystem-for-linux">
+<meta name="ms.topic" content="article">
+<meta name="ms.translationtype" content="MT">
+<meta name="original_content_git_url" content="https://github.com/MicrosoftDocs/WSL/blob/live/WSL/install.md">
+<meta name="page_type" content="conceptual">
+<meta name="recommendations" content="true">
+<meta name="schema" content="Conceptual">
+<meta name="site_name" content="Docs">
+<meta name="toc_rel" content="toc.json">
+<meta name="updated_at" content="2022-08-13 05:59 AM">
+<meta name="word_count" content="2375">
+
+
+
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/bcbcbad5-4208-4783-8035-8481272c98b8" data-source="generated">
+
+	<meta name="cmProducts" content="https://authoring-docs-microsoft.poolparty.biz/devrel/8bce367e-2e90-4b56-9ed5-5e4e9f3a2dc3" data-source="generated">
+
+	
+
+	<meta name="scope" content="WSL">
+	<meta name="github_feedback_content_git_url" content="https://github.com/MicrosoftDocs/wsl/blob/main/WSL/install.md">
+<link href="https://docs.microsoft.com/zh-tw/windows/wsl/install" rel="canonical">
+	<title>安裝 WSL | Microsoft Docs</title>
+
+		<link rel="stylesheet" href="./安裝 WSL _ Microsoft Docs_files/55b82566.site-ltr.css">
+
+	
+
+	<script id="msdocs-script">
+	var msDocs = {
+		data: {
+			timeOrigin: Date.now(),
+			contentLocale: 'zh-tw',
+			contentDir: 'ltr',
+			userLocale: 'zh-tw',
+			userDir: 'ltr',
+			pageTemplate: 'Conceptual',
+			brand: '',
+			context: {
+			},
+			hasBinaryRating: true,
+			hasGithubIssues: false,
+			showFeedbackReport: false,
+			enableTutorialFeedback: false,
+			feedbackSystem: 'None',
+			feedbackGitHubRepo: '',
+			extendBreadcrumb: true,
+			isEditDisplayable: false,
+			hideViewSource: false,
+			hasPageActions: true,
+			hasBookmark: true,
+			hasShare: true,
+			hasRecommendations: true,
+			contributors: [
+						{ name: "craigloewen-msft", url: "https://github.com/craigloewen-msft" },
+						{ name: "mattwojo", url: "https://github.com/mattwojo" },
+						{ name: "donwilson", url: "https://github.com/donwilson" },
+						{ name: "wibjorn", url: "https://github.com/wibjorn" },
+						{ name: "dix", url: "https://github.com/dix" },
+						{ name: "crramirez", url: "https://github.com/crramirez" },
+						{ name: "pzhlkj6612", url: "https://github.com/pzhlkj6612" },
+						{ name: "v-alje", url: "https://github.com/v-alje" }
+],
+		},
+		functions:{}
+	};
+	</script>
+	<script src="./安裝 WSL _ Microsoft Docs_files/wcp-consent.js.下載"></script>
+	<script src="./安裝 WSL _ Microsoft Docs_files/ms.jsll-3.min.js.下載"></script>
+
+	<script src="./安裝 WSL _ Microsoft Docs_files/67a45209.deprecation.js.下載"></script>
+		<script src="./安裝 WSL _ Microsoft Docs_files/c68152df.index-docs.js.下載"></script><style></style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"name":"Docs","position":1,"@type":"ListItem","item":"https://docs.microsoft.com/zh-tw/"},{"name":"Windows","position":2,"@type":"ListItem","item":"https://docs.microsoft.com/zh-tw/windows/"},{"name":"開發環境","position":3,"@type":"ListItem","item":"https://docs.microsoft.com/zh-tw/windows/dev-environment/overview"},{"name":"WSL","position":4,"@type":"ListItem","item":"https://docs.microsoft.com/zh-tw/windows/wsl/"},{"name":"安裝 WSL","position":5,"@type":"ListItem"}]}</script></head>
+
+<body lang="zh-tw" dir="ltr">
+	<div class="header-holder has-default-focus">
+		<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#main" class="skip-to-main-link has-outline-color-text visually-hidden-until-focused position-fixed has-inner-focus focus-visible top-0 left-0 right-0 padding-xs has-text-centered has-body-background" tabindex="1">跳到主要內容</a>
+
+		<div hidden="" id="cookie-consent-holder"></div>
+
+		<div id="unsupported-browser" style="
+			background-color: white;
+			color: black;
+			padding: 16px;
+			border-bottom: 1px solid grey;" hidden="">
+			<div style="max-width: 800px; margin: 0 auto;">
+				<p style="font-size: 24px">已不再支援此瀏覽器。</p>
+				<p style="font-size: 16px; margin-top: 16px;">請升級至 Microsoft Edge，以利用最新功能、安全性更新和技術支援。</p>
+				<div style="margin-top: 12px;">
+					<a href="https://go.microsoft.com/fwlink/p/?LinkID=2092881" style="
+						background-color: #0078d4;
+						border: 1px solid #0078d4;
+						color: white;
+						padding: 6px 12px;
+						border-radius: 2px;
+						display: inline-block;
+						">
+下載 Microsoft Edge					</a>
+					<a href="https://docs.microsoft.com/en-US/lifecycle/faq/internet-explorer-microsoft-edge" style="
+							background-color: white;
+							padding: 6px 12px;
+							border: 1px solid #505050;
+							color: #171717;
+							border-radius: 2px;
+							display: inline-block;
+							">
+其他資訊					</a>
+				</div>
+			</div>
+
+		</div>
+		<!-- liquid-tag banners global -->
+		<div id="headerAreaHolder" data-bi-name="header">
+<header role="banner" itemscope="itemscope" itemtype="http://schema.org/Organization"><!----> <div class="nav-bar"><!----> <div class="nav-bar-brand display-flex align-items-center padding-none margin-left-xs margin-left-none-tablet">
+		
+					<a class="nav-bar-button" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft">
+						 <div class="nav-bar-logo" role="presentation" aria-hidden="true" itemprop="logo" itemscope="itemscope">
+				
+		<svg xmlns="http://www.w3.org/2000/svg" width="108" height="23" viewBox="72 72 337 74" preserveAspectRatio="xMidYMin slice">
+			<g data-name="MS-symbol">
+				<clippath>
+					<path transform="matrix(1 0 0 -1 0 216)" d="M0 216h482V0H0z"></path>
+				</clippath>
+				<g clip-path="url(#a)">
+					<path d="M394.942 104.59h-10.858v25.003h-7.38V104.59h-5.182v-5.965h5.182v-4.308c0-3.254 1.06-5.92 3.178-7.998 2.12-2.079 4.835-3.118 8.15-3.118.882 0 1.666.045 2.35.135a9.37 9.37 0 011.806.407v6.296c-.24-.14-.663-.31-1.265-.512-.603-.2-1.296-.3-2.078-.3-1.528 0-2.702.476-3.526 1.43-.824.954-1.235 2.365-1.235 4.232v3.736h10.858v-6.959l7.321-2.229v9.188h7.381v5.965h-7.38v14.49c0 1.91.345 3.254 1.038 4.037.693.783 1.782 1.175 3.27 1.175.42 0 .927-.1 1.52-.3a7.178 7.178 0 001.552-.724v6.025c-.463.261-1.23.502-2.305.723a15.742 15.742 0 01-3.178.331c-3.073 0-5.378-.817-6.914-2.455-1.537-1.637-2.305-4.102-2.305-7.396zm-48.407 9.73c0 3.233.733 5.703 2.2 7.411 1.465 1.707 3.564 2.56 6.295 2.56 2.652 0 4.67-.853 6.055-2.56 1.386-1.708 2.08-4.238 2.08-7.592 0-3.334-.719-5.849-2.155-7.547-1.436-1.697-3.45-2.545-6.04-2.545-2.67 0-4.745.888-6.22 2.666-1.477 1.777-2.215 4.313-2.215 7.607m-7.592.24c0-5.12 1.446-9.177 4.338-12.17 2.892-2.993 6.91-4.489 12.05-4.489 4.841 0 8.621 1.441 11.343 4.323 2.721 2.883 4.082 6.774 4.082 11.674 0 5.021-1.447 9.018-4.338 11.99-2.892 2.973-6.829 4.458-11.81 4.458-4.8 0-8.61-1.41-11.432-4.232-2.822-2.82-4.233-6.673-4.233-11.554m-16.417-7.802c0 1.045.331 1.863.994 2.456.662.592 2.128 1.34 4.398 2.243 2.912 1.166 4.956 2.476 6.131 3.932 1.175 1.456 1.762 3.22 1.762 5.287 0 2.912-1.12 5.252-3.359 7.02-2.24 1.767-5.267 2.65-9.083 2.65-1.285 0-2.706-.155-4.263-.467-1.556-.31-2.877-.707-3.96-1.19v-7.169a17.945 17.945 0 004.277 2.198c1.526.543 2.911.814 4.157.814 1.647 0 2.862-.23 3.645-.693.784-.46 1.175-1.235 1.175-2.319 0-1.005-.406-1.853-1.22-2.546-.813-.693-2.355-1.492-4.624-2.395-2.69-1.125-4.599-2.39-5.724-3.796-1.125-1.406-1.687-3.193-1.687-5.362 0-2.792 1.11-5.086 3.33-6.884 2.217-1.797 5.095-2.696 8.63-2.696 1.084 0 2.3.12 3.645.361 1.346.242 2.47.553 3.374.934v6.93c-.964-.644-2.089-1.195-3.374-1.658-1.286-.462-2.56-.693-3.826-.693-1.386 0-2.465.271-3.238.813-.774.543-1.16 1.286-1.16 2.23m-35.066 7.562c0 3.233.733 5.703 2.2 7.411 1.465 1.707 3.564 2.56 6.295 2.56 2.652 0 4.67-.853 6.055-2.56 1.386-1.708 2.08-4.238 2.08-7.592 0-3.334-.719-5.849-2.155-7.547-1.436-1.697-3.449-2.545-6.039-2.545-2.672 0-4.745.888-6.222 2.666-1.476 1.777-2.214 4.313-2.214 7.607m-7.592.24c0-5.12 1.446-9.177 4.338-12.17 2.893-2.993 6.91-4.489 12.051-4.489 4.84 0 8.621 1.441 11.342 4.323 2.721 2.883 4.082 6.774 4.082 11.674 0 5.021-1.446 9.018-4.338 11.99-2.892 2.973-6.828 4.458-11.809 4.458-4.8 0-8.61-1.41-11.433-4.232-2.822-2.82-4.233-6.673-4.233-11.554m-3.136-16.448c.582 0 1.105.041 1.567.121.462.08.853.18 1.175.301v7.38c-.382-.28-.939-.546-1.672-.798-.733-.25-1.622-.376-2.666-.376-1.788 0-3.299.753-4.534 2.26-1.235 1.505-1.853 3.825-1.853 6.958v15.635h-7.29V98.624h7.29v4.88h.12c.663-1.687 1.667-3.007 3.013-3.96 1.346-.954 2.962-1.432 4.85-1.432m-27.956 26.18c1.084 0 2.28-.25 3.585-.754a15.06 15.06 0 003.615-1.988v6.778c-1.165.663-2.485 1.165-3.962 1.506-1.475.342-3.098.512-4.865.512-4.559 0-8.265-1.44-11.116-4.323-2.852-2.88-4.278-6.562-4.278-11.04 0-4.98 1.456-9.083 4.37-12.307 2.91-3.224 7.037-4.835 12.38-4.835 1.366 0 2.746.176 4.143.527 1.395.352 2.504.758 3.328 1.22v6.99c-1.125-.824-2.274-1.462-3.45-1.914a9.966 9.966 0 00-3.599-.678c-2.872 0-5.192.934-6.959 2.802-1.768 1.868-2.652 4.388-2.652 7.562 0 3.132.85 5.573 2.546 7.32 1.697 1.748 4.002 2.621 6.914 2.621m-22.112 5.302h-7.29V98.624h7.29zm-8.044-39.916c0-1.205.437-2.214 1.311-3.028.874-.813 1.913-1.22 3.118-1.22 1.285 0 2.35.417 3.193 1.25.844.834 1.266 1.833 1.266 2.998 0 1.185-.432 2.18-1.296 2.982-.864.804-1.918 1.205-3.163 1.205-1.246 0-2.295-.406-3.148-1.219-.854-.815-1.28-1.803-1.28-2.968m-6.274-3.284v43.2h-7.5v-33.86h-.12l-13.408 33.86h-4.97l-13.738-33.86h-.09v33.86h-6.929v-43.2h10.755l12.412 32.024h.18l13.105-32.024z" class="fill-current-color color-text-subtle"></path>
+					<path d="M106.214 106.214H71.996V71.996h34.218z" fill="#f25022"></path>
+					<path d="M143.993 106.214h-34.218V71.996h34.218z" fill="#7fba00"></path>
+					<path d="M106.214 143.993H71.996v-34.218h34.218z" fill="#00a4ef"></path>
+					<path d="M143.993 143.993h-34.218v-34.218h34.218z" fill="#ffb900"></path>
+				</g>
+			</g>
+		</svg>
+	
+		  </div>
+					</a>
+			  
+	</div> 
+				
+		<div class="nav-bar-item is-hidden-tablet">
+			<div class="nav-bar-menu">
+				<button class="nav-bar-button is-title" title="全域導覽" aria-expanded="false">
+					<span class="nav-bar-menu-title"><!---->文件<!----></span>
+					<div class="nav-bar-burger">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span class="nav-bar-burger-label"><!---->全域導覽<!----></span>
+					</div>
+				</button>
+			</div>
+		</div>
+	
+				
+		<nav class="nav-bar-nav" role="navigation" aria-label="全球">
+			<ul class="nav-bar-nav-list">
+				
+		<li class="nav-bar-item is-category">
+			<a class="nav-bar-button is-title has-hover-underline" itemprop="url" href="https://docs.microsoft.com/zh-tw/">
+				<span><!---->Docs<!----></span>
+			</a>
+		</li>
+	
+				<!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline is-active" href="https://docs.microsoft.com/zh-tw/docs/">
+						<span><!---->文件<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://docs.microsoft.com/zh-tw/training/">
+						<span><!---->Learn<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://docs.microsoft.com/zh-tw/certifications/">
+						<span><!---->認證<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://docs.microsoft.com/zh-tw/answers/products/">
+						<span><!---->Q&amp;A<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://docs.microsoft.com/zh-tw/samples/browse/">
+						<span><!---->程式碼範例<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://docs.microsoft.com/zh-tw/shows/">
+						<span><!---->節目<!----></span>
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item">
+					<a class=" nav-bar-button has-hover-underline " href="https://docs.microsoft.com/zh-tw/events/">
+						<span><!---->事件<!----></span>
+					</a>
+				</li>
+		  <!----> <li class="dropdown nav-bar-item" hidden="">
+		<button aria-expanded="false" class="dropdown-trigger nav-bar-button  has-hover-underline" aria-controls="ax-47">
+			<span><!---->其他<!----></span>
+			<span class="nav-bar-button-chevron" aria-hidden="true">
+				<span class="docon docon-chevron-down-light expanded-indicator"></span>
+			</span>
+		</button>
+		<ul class="dropdown-menu" id="ax-47" aria-label="其他">
+			<!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button is-active" href="https://docs.microsoft.com/zh-tw/docs/">
+						文件
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://docs.microsoft.com/zh-tw/training/">
+						Learn
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://docs.microsoft.com/zh-tw/certifications/">
+						認證
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://docs.microsoft.com/zh-tw/answers/products/">
+						Q&amp;A
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://docs.microsoft.com/zh-tw/samples/browse/">
+						程式碼範例
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://docs.microsoft.com/zh-tw/shows/">
+						節目
+					</a>
+				</li>
+		  <!---->
+				<li class="nav-bar-item" hidden="">
+					<a class=" nav-bar-button " href="https://docs.microsoft.com/zh-tw/events/">
+						事件
+					</a>
+				</li>
+		  <!---->
+		</ul>
+	</li><!---->
+			</ul>
+		</nav>
+	
+				<span class="nav-bar-spacer"></span>
+				
+		<div class="nav-bar-search " id="ax-48" hidden="">
+			
+		<form class="nav-bar-search-form" method="GET" name="nav-bar-search-form" role="search" id="nav-bar-search-form" aria-label="搜尋" action="https://docs.microsoft.com/zh-tw/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!---->
+			<div class="field-body control ">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="site-search-input" class="autocomplete-input input input-sm
+						
+						" type="search" name="terms" aria-expanded="false" aria-owns="ax-49-listbox" aria-controls="ax-49-listbox" aria-activedescendant="" aria-label="搜尋" placeholder="搜尋" pattern=".*">
+
+				<span aria-hidden="true" class="icon is-small is-left" hidden="">
+					<span class="has-text-primary docon docon-undefined"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul role="listbox" id="ax-49-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xs " aria-label="site-search-input-suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			<input name="scope" hidden="" value="WSL">
+			
+			
+		</form>
+	
+		</div>
+		
+					<div class="nav-bar-search">
+						<!-- hidden when the width drops to tablet -->
+						
+		<form class="nav-bar-search-form" method="GET" name="nav-bar-search-form" role="search" id="nav-bar-search-form-desktop" aria-label="搜尋" action="https://docs.microsoft.com/zh-tw/search/">
+			<div class="autocomplete" data-bi-name="autocomplete"><!---->
+			<div class="field-body control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-50" class="autocomplete-input input input-sm
+						control has-icons-left
+						" type="search" name="terms" aria-expanded="false" aria-owns="ax-51-listbox" aria-controls="ax-51-listbox" aria-activedescendant="" aria-label="搜尋" placeholder="搜尋" pattern=".*">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-search"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul role="listbox" id="ax-51-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xs " aria-label="ax-50-suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div>
+			<!-- mobile safari will not dispatch submit event unless there's a submit button that is not display:none -->
+			<button type="submit" class="visually-hidden" tabindex="-1" aria-hidden="true"></button>
+			<input name="category" hidden="" value="">
+			<input name="scope" hidden="" value="WSL">
+			
+			
+		</form>
+	
+					</div>
+			  
+		<div class="nav-bar-search " hidden="">
+			<div class="nav-bar-search-form-expander">
+				<button id="form-expander" class="nav-bar-button has-hover-underline " title="搜尋" aria-expanded="false" aria-controls="ax-48">
+					
+		<span class="is-visually-hidden-mobile"><!---->搜尋<!----></span>
+		<span class="icon margin-left-xxs" aria-hidden="true">
+			<span class="docon docon-search"></span>
+		</span>
+	
+				</button>
+			</div>
+		</div>
+	
+				
+		<div class="nav-bar-profile">
+			
+		<a class="docs-sign-in auth-status-determined not-authenticated" href="https://docs.microsoft.com/zh-tw/windows/wsl/install#"> 登入 </a>
+	 
+		<div class="dropdown has-caret auth-status-determined authenticated">
+			<button class="dropdown-trigger button-reset" aria-controls="user-menu" aria-expanded="false" aria-label="您的帳戶">
+				<figure class="image is-36x36">
+					<img class="has-body-background-medium border-radius-rounded" alt="" data-profile-property="avatarUrl">
+				</figure>
+			</button>
+			<div class="dropdown-menu box justify-content-flex-start has-body-background" id="user-menu" role="menu">
+				<div class="media is-user-dir">
+					<div class="media-left">
+						<figure class="image is-48x48" aria-hidden="true">
+							<img class="has-body-background-medium border-radius-rounded" aria-labelledby="displayName" alt="" data-profile-property="avatarUrl">
+						</figure>
+					</div>
+					<div class="media-content">
+						<h2 class="title font-size-lg">
+							<span id="displayName" class="is-inline-truncated has-max-width-200" data-profile-property="displayName"></span>
+						</h2>
+						<p class="subtitle font-size-sm margin-bottom-none">
+							<span class="is-inline-truncated has-max-width-200" data-profile-property="upn"></span>
+						</p>
+					</div>
+				</div>
+				<ul class="padding-top-xs padding-bottom-xs">
+					<li class="padding-bottom-xs">
+						<a data-profile-property="profileUrl" href="https://docs.microsoft.com/zh-tw/users/me/activity/"><!---->設定檔<!----></a>
+					</li>
+					<li>
+						<a data-profile-property="settingsUrl" href="https://docs.microsoft.com/zh-tw/users/me/settings/"><!---->設定<!----></a>
+					</li>
+				</ul>
+				<div class="border-top padding-top-xs">
+					<a class="docs-sign-out" href="https://docs.microsoft.com/zh-tw/windows/wsl/install#"><!---->登出<!----></a>
+				</div>
+			</div>
+		</div>
+	
+		</div>
+	
+			 <!----></div>  <!----></header>		</div>
+
+
+			<div id="content-header" class="content-header uhf-container has-padding has-default-focus border-bottom-none" data-bi-name="content-header">
+				<div class="content-header-controls margin-xxs margin-inline-sm-tablet">
+					<button type="button" class="contents-button button button-sm margin-right-xxs" data-bi-name="contents-expand" aria-haspopup="true" data-contents-button="">
+						<span class="icon"><span class="docon docon-menu" aria-hidden="true"></span></span>
+						<span class="contents-expand-title">
+目錄						</span>
+					</button>
+					<button type="button" class="ap-collapse-behavior ap-expanded button button-sm" data-bi-name="ap-collapse" aria-controls="action-panel">
+						<span class="icon"><span class="docon docon-exit-mode" aria-hidden="true"></span></span>
+						<span>結束焦點模式</span>
+					</button>
+				</div>
+			</div>
+
+		<div id="disclaimer-holder" class="has-overflow-hidden has-default-focus"><!---->
+			<section data-dismissable="disappearing" data-bi-name="banner" class="is-info alert is-banner">
+				<div class="uhf-container">
+					<button data-dismiss="" data-bi-name="close" type="button" class="delete position-absolute top-0 right-0 margin-xxs delete-lg">
+						<span class="visually-hidden"><!---->關閉警示<!----></span>
+					</button>
+					<div class="columns">
+						<div class="column is-12">
+							<div class="level justify-content-flex-start">
+								<div class="level-left flex-shrink-1">
+									<div class="level-item flex-shrink-1">
+										<p class="has-text-white-static disclaimer-title margin-top-xxs margin-right-xs has-line-height-reset">
+											<span class="icon">
+												<span class="docon docon-status-error-outline" aria-hidden="true"></span>
+											</span>
+											<span><!---->本主題有部分內容為機器翻譯。<!----></span>
+										</p>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+		<!----></div>
+	</div>
+
+	<div class="mainContainer  uhf-container has-default-focus" data-bi-name="body">
+
+		<div class="columns has-large-gaps is-gapless-mobile ">
+
+			<div id="left-container" class="left-container is-hidden-mobile column is-one-third-tablet is-one-quarter-desktop">
+				<nav id="affixed-left-container" class="margin-top-sm-tablet position-fixed display-flex flex-direction-column" role="navigation" aria-label="主要" data-bi-name="left toc" style="width: 406px; top: 24px; bottom: 24px;"><form action="javascript:" role="search" aria-label="搜尋" class="margin-bottom-xxs"><label class="visually-hidden" for="ax-0">搜尋</label><div class="autocomplete display-block" data-bi-name="autocomplete"><!---->
+			<div class="field-body control has-icons-left">
+				<input role="combobox" maxlength="100" aria-autocomplete="list" autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false" id="ax-0" class="autocomplete-input input input-sm
+						control has-icons-left
+						width-full" type="text" aria-expanded="false" aria-owns="ax-1-listbox" aria-controls="ax-1-listbox" aria-activedescendant="" placeholder="依標題篩選" pattern=".*">
+
+				<span aria-hidden="true" class="icon is-small is-left">
+					<span class="has-text-primary docon docon-filter-settings"></span>
+				</span>
+
+				<span aria-hidden="true" class="autocomplete-loader loader has-text-primary " hidden=""></span>
+			</div>
+
+			<ul role="listbox" id="ax-1-listbox" class="autocomplete-suggestions is-vertically-scrollable padding-xs " aria-label="ax-0-suggestions" hidden="">
+				
+				
+			</ul>
+		<!----></div></form><ul class="tree table-of-contents is-vertically-scrollable flex-grow-1 flex-shrink-1" role="tree" aria-label="目錄" data-bi-name="tree" data-is-collapsible="true"><li role="none"><a aria-setsize="9" aria-level="1" aria-posinset="1" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://docs.microsoft.com/zh-tw/windows/wsl/">WSL 文件</a></li><li class="tree-item" aria-setsize="9" aria-level="1" aria-posinset="2" role="treeitem" tabindex="-1" id="title-2-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>概觀</span></li><li class="tree-item is-expanded" aria-setsize="9" aria-level="1" aria-posinset="3" role="treeitem" tabindex="-1" id="title-3-1" aria-expanded="true"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>安裝</span><ul class="tree-group" role="group"><li role="none"><a aria-setsize="3" aria-level="2" aria-posinset="1" role="treeitem" tabindex="0" class="tree-item is-leaf has-external-link-indicator is-selected" data-bi-name="tree-leaf" href="https://docs.microsoft.com/zh-tw/windows/wsl/install" aria-current="page">安裝 WSL</a></li><li role="none"><a aria-setsize="3" aria-level="2" aria-posinset="2" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://docs.microsoft.com/zh-tw/windows/wsl/install-manual">針對較舊版本的手動安裝步驟</a></li><li role="none"><a aria-setsize="3" aria-level="2" aria-posinset="3" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://docs.microsoft.com/zh-tw/windows/wsl/install-on-server">安裝在 Windows Server 上</a></li></ul></li><li class="tree-item" aria-setsize="9" aria-level="1" aria-posinset="4" role="treeitem" tabindex="-1" id="title-4-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>教學課程</span></li><li class="tree-item" aria-setsize="9" aria-level="1" aria-posinset="5" role="treeitem" tabindex="-1" id="title-5-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>概念</span></li><li class="tree-item" aria-setsize="9" aria-level="1" aria-posinset="6" role="treeitem" tabindex="-1" id="title-6-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>操作方式</span></li><li role="none"><a aria-setsize="9" aria-level="1" aria-posinset="7" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://docs.microsoft.com/zh-tw/windows/wsl/faq">常見問題集</a></li><li role="none"><a aria-setsize="9" aria-level="1" aria-posinset="8" role="treeitem" tabindex="-1" class="tree-item is-leaf has-external-link-indicator" data-bi-name="tree-leaf" href="https://docs.microsoft.com/zh-tw/windows/wsl/troubleshooting">疑難排解</a></li><li class="tree-item" aria-setsize="9" aria-level="1" aria-posinset="9" role="treeitem" tabindex="-1" id="title-9-1" aria-expanded="false"><span data-bi-name="tree-expander" class="tree-expander"><span class="tree-expander-indicator docon docon-chevron-right-light" aria-hidden="true"></span>版本資訊</span></li></ul></nav>
+			</div>
+
+			<!-- .primary-holder -->
+			<section class="primary-holder column is-two-thirds-tablet is-three-quarters-desktop">
+				<!--div.columns -->
+				<div class="columns is-gapless-mobile has-large-gaps ">
+
+
+					<div id="main-column" class="column  is-full is-8-desktop">
+
+						<main id="main" role="main" data-bi-name="content" lang="zh-tw" dir="ltr">
+							<!-- article-header -->
+							<div id="article-header" class="background-color-body margin-top-sm-tablet margin-bottom-xs display-none-print">
+								<div class="display-flex align-items-center ">
+									<details id="article-header-breadcrumbs-overflow-popover" class="popover" data-for="article-header-breadcrumbs" hidden="">
+										<summary class="button button-clear button-primary button-sm" aria-label="所有階層連結">
+											<span class="icon">
+												<span class="docon docon-more"></span>
+											</span>
+										</summary>
+										<div id="article-header-breadcrumbs-overflow" class="popover-content padding-none"><!---->
+			<nav>
+				<ol class="list-style-none">
+					<!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://docs.microsoft.com/zh-tw/">
+										Docs
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://docs.microsoft.com/zh-tw/windows/">
+										Windows
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://docs.microsoft.com/zh-tw/windows/dev-environment/overview">
+										開發環境
+									</a>
+								</li>
+							<!----><!---->
+								<li class="line-clamp-1">
+									<a class="display-block has-inner-focus padding-inline-xs padding-block-xxs border-radius font-size-sm" href="https://docs.microsoft.com/zh-tw/windows/wsl/">
+										WSL
+									</a>
+								</li>
+							<!----><!----><!----><!----><!---->
+				</ol>
+			</nav>
+			
+		<!----></div>
+									</details>
+									<bread-crumbs id="article-header-breadcrumbs" class="overflow-hidden flex-grow-1 margin-right-sm margin-right-md-tablet margin-right-lg-desktop" style="display: block; white-space: nowrap; overflow: hidden;"><!---->
+			<nav>
+				<ol class="breadcrumbs">
+					<!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://docs.microsoft.com/zh-tw/"><!---->Docs<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://docs.microsoft.com/zh-tw/windows/"><!---->Windows<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="">
+									<a href="https://docs.microsoft.com/zh-tw/windows/dev-environment/overview"><!---->開發環境<!----></a>
+								</li>
+							<!----><!---->
+								<li class="breadcrumbs-item" data-bread-crumbs-collapse-target="" style="">
+									<a href="https://docs.microsoft.com/zh-tw/windows/wsl/" style=""><!---->WSL<!----></a>
+								</li>
+							<!----><!----><!----><!----><!---->
+				</ol>
+			</nav>
+		<!----></bread-crumbs>
+
+									<div id="article-header-page-actions" class="margin-left-auto display-flex flex-wrap-no-wrap align-items-stretch">
+
+										<a id="lang-link-tablet" class="button button-primary button-clear button-sm display-none display-inline-flex-tablet" title="閱讀英文" data-bi-name="language-toggle" data-read-in-link="" href="https://docs.microsoft.com/en-us/windows/wsl/install" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+											<span class="icon margin-none" aria-hidden="true" data-read-in-link-icon="">
+												<span class="docon docon-locale-globe"></span>
+											</span>
+											<span class="is-visually-hidden" data-read-in-link-text="">閱讀英文</span>
+										</a>
+
+											<button type="button" class="collection button button-clear button-sm button-primary display-none display-inline-flex-tablet" data-list-type="collection" data-bi-name="collection" title="將 安裝 WSL | Microsoft Docs 新增至集合" data-pressed="false">
+												<span class="icon margin-none" aria-hidden="true">
+													<span class="docon docon-circle-addition"></span>
+												</span>
+												<span class="collection-status is-visually-hidden">儲存</span>
+											</button>
+										
+
+										
+
+										
+
+										
+
+
+										
+										<details class="popover popover-right" id="article-header-page-actions-overflow">
+											<summary class="justify-content-flex-start button button-clear button-sm button-primary" aria-label="更多動作">
+												<span class="icon" aria-hidden="true">
+													<span class="docon docon-more-vertical"></span>
+												</span>
+											</summary>
+											<div class="popover-content padding-none">
+													<button data-page-action-item="overflow-mobile" type="button" class="justify-content-flex-start button-block button-sm has-inner-focus button button-clear display-none-tablet" aria-label="目錄" data-bi-name="contents-expand" data-contents-button="" data-popover-close="">
+														<span class="icon">
+															<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+														</span>
+														<span class="contents-expand-title">目錄</span>
+													</button>
+
+												<a id="lang-link-overflow" class="justify-content-flex-start button-sm has-inner-focus button button-clear button-block display-none-tablet" title="閱讀英文" data-bi-name="language-toggle" data-page-action-item="overflow-mobile" data-check-hidden="true" data-read-in-link="" href="https://docs.microsoft.com/en-us/windows/wsl/install" data-bi="{&quot;cN&quot;:&quot;language-toggle&quot;,&quot;value&quot;:&quot;off&quot;}">
+													<span class="icon" aria-hidden="true" data-read-in-link-icon="">
+														<span class="docon docon-locale-globe"></span>
+													</span>
+													<span data-read-in-link-text="">閱讀英文</span>
+												</a>
+
+													<button type="button" class="collection justify-content-flex-start button button-clear button-sm has-inner-focus button-block display-none-tablet" data-list-type="collection" data-bi-name="collection" title="將 安裝 WSL | Microsoft Docs 新增至集合" data-page-action-item="overflow-mobile" data-check-hidden="true" data-popover-close="" data-pressed="false">
+														<span class="icon" aria-hidden="true">
+															<span class="docon docon-circle-addition"></span>
+														</span>
+														<span class="collection-status">儲存</span>
+													</button>
+
+
+
+
+													<div aria-hidden="true" class="margin-none display-none-tablet border-top" data-page-action-item="overflow-all"></div>
+
+													
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-twitter" data-bi-name="twitter" data-page-action-item="overflow-all" href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fzh-tw%2Fwindows%2Fwsl%2Finstall%3FWT.mc_id%3Dtwitter&amp;text=%E5%AE%89%E8%A3%9D%20WSL%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fzh-tw%2Fwindows%2Fwsl%2Finstall%3FWT.mc_id%3Dtwitter">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-twitter"></span>
+															</span>
+															<span>Twitter</span>
+														</a>
+														<a class="button button-clear button-sm has-inner-focus button-block text-decoration-none justify-content-flex-start share-linkedin" data-bi-name="linkedin" data-page-action-item="overflow-all" href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fzh-tw%2Fwindows%2Fwsl%2Finstall%3FWT.mc_id%3Dlinkedin">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-linkedin"></span>
+															</span>
+															<span>LinkedIn</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-facebook" data-bi-name="facebook" data-page-action-item="overflow-all" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fzh-tw%2Fwindows%2Fwsl%2Finstall%3FWT.mc_id%3Dfacebook">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-brand-facebook"></span>
+															</span>
+															<span>Facebook</span>
+														</a>
+														<a class="button button-clear button-sm button-block has-inner-focus text-decoration-none justify-content-flex-start share-email" data-bi-name="email" data-page-action-item="overflow-all" href="mailto:?subject=%5B%E5%88%86%E4%BA%AB%E7%9A%84%E6%96%87%E7%AB%A0%5D%20%E5%AE%89%E8%A3%9D%20WSL%20%7C%20Microsoft%20Docs&amp;body=%E5%AE%89%E8%A3%9D%20WSL%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fzh-tw%2Fwindows%2Fwsl%2Finstall%3FWT.mc_id%3Demail">
+															<span class="icon" aria-hidden="true">
+																<span class="docon docon-mail-message-fill"></span>
+															</span>
+															<span>電子郵件</span>
+														</a>
+												
+											</div>
+										</details>
+										
+									</div>
+								</div>
+							</div>
+							<!-- end article-header -->
+
+
+							<div class="">
+								<button type="button" class="border contents-button button button-clear button-sm is-hidden-tablet has-inner-focus" aria-label="目錄" data-bi-name="contents-expand" data-contents-button="" hidden="">
+									<span class="icon">
+										<span class="docon docon-editor-list-bullet" aria-hidden="true"></span>
+									</span>
+									<span class="contents-expand-title">目錄</span>
+								</button>
+							</div>
+
+							<!-- end mobile-contents button  -->
+
+							<div class="content ">
+
+
+								<h1 id="install-linux-on-windows-with-wsl">使用 WSL 在 Windows 上安裝 Linux</h1>
+
+
+									<div class="display-flex-tablet justify-content-space-between-tablet page-metadata-container">
+										<ul class="metadata page-metadata" data-bi-name="page info" lang="zh-tw" dir="ltr">
+												<li>
+發行項												</li>
+												<li>
+													<time class="" data-article-date="" aria-label="文章檢閱日期" datetime="2022-08-13T05:59:00.000Z" data-article-date-source="git">2022/08/13</time>
+												</li>
+													<li class="contributors-holder display-none-print">
+														<button aria-label="檢視所有參與者" class="contributors-button link-button" data-bi-name="contributors" title="檢視所有參與者">
+																8 位參與者
+														</button>
+													</li>
+										</ul>
+
+<div id="user-feedback" class="display-flex display-none-print" data-hide-on-archived="">
+	<button class="thumb-rating-button like link-button margin-xxs margin-right-none" data-binary-rating-response="rating-yes" title="本文很有幫助" type="button" data-bi-name="rating-yes" data-bi-sat="1">
+		<span class="icon docon docon-like" aria-hidden="true"></span>
+	</button>
+	<button class="thumb-rating-button dislike link-button margin-xxs margin-right-none" data-binary-rating-response="rating-no" title="本文沒有幫助" type="button" data-bi-name="rating-no" data-bi-sat="0">
+		<span class="icon docon docon-dislike" aria-hidden="true"></span>
+	</button>
+</div>
+									</div>
+
+										<nav id="center-doc-outline" class="doc-outline is-hidden-desktop display-none-print" data-bi-name="intopic toc" role="navigation" aria-label="文章大綱"><!---->
+		<h3><!---->本文內容<!----></h3>
+		<ol>
+			<!---->
+					<li>
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#prerequisites"><!---->先決條件<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#install-wsl-command"><!---->安裝 WSL 命令<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#change-the-default-linux-distribution-installed"><!---->變更已安裝的預設 Linux 發行版本<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#set-up-your-linux-user-info"><!---->設定 Linux 使用者資訊<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#set-up-and-best-practices"><!---->設定和最佳做法<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#check-which-version-of-wsl-you-are-running"><!---->檢查您正在執行的 WSL 版本<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2"><!---->將版本從 WSL 1 升級至 WSL 2<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#ways-to-run-multiple-linux-distributions-with-wsl"><!---->使用 WSL 執行多個 Linux 發行版本的方式<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#want-to-try-the-latest-wsl-preview-features"><!---->想要嘗試最新的 WSL 預覽功能嗎？<!----></a>
+					</li>
+				<!---->
+					<li>
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#additional-resources"><!---->其他資源<!----></a>
+					</li>
+				<!---->
+		</ol>
+	<!----></nav>
+
+								<!-- <content> -->
+									<p>本指南將示範如何使用 Windows 子系統 Linux 版 安裝 Linux 發行版本 (，例如 Ubuntu、OpenSUSE、一般、Debian、Arch Linux 等) 。 WSL 可讓您使用與 Windows 工具完全整合的 Linux 工具，例如 Bash 或 Grep，例如 PowerShell 或Visual Studio Code，而不需要雙開機。</p>
+<h2 id="prerequisites" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/install#prerequisites" aria-labelledby="prerequisites"></a>先決條件</h2>
+<p>您必須執行 Windows 10 2004 版和更新版本， (組建 19041 和更新版本) 或Windows 11。</p>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> 注意</p>
+<p>若要檢查您的 Windows 版本和組建編號，請選取 <strong>[Windows 標誌鍵 + R</strong>]，輸入 <strong>winver</strong>，選取 [ <strong>確定</strong>]。 您可以選取 [<strong>開始</strong>&gt;<strong>設定</strong>&gt; Windows Update<strong><a href="ms-settings:windowsupdate" data-linktype="external">檢查更新</a></strong>]<strong>，</strong>&gt; 以更新為最新的 Windows 版本。</p>
+</div>
+<p>如果您正在執行較舊的組建，或只是不想使用安裝命令，而且想要逐步指示，請參閱 <strong><a href="https://docs.microsoft.com/zh-tw/windows/wsl/install-manual" data-linktype="relative-path">舊版的 WSL 手動安裝步驟</a></strong>。</p>
+<h2 id="install-wsl-command" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/install#install-wsl-command" aria-labelledby="install-wsl-command"></a>安裝 WSL 命令</h2>
+<p>您現在可以在<strong>系統管理員</strong>PowerShell 或 Windows 命令提示字元中輸入此命令，然後重新開機電腦，以安裝執行Windows 子系統 Linux 版 (WSL) 所需的所有專案。</p>
+<div class="codeHeader" id="code-try-0" data-bi-name="code-header"><span class="language">PowerShell</span>
+		<button type="button" class="action position-relative display-none-print" data-bi-name="copy">
+			<span class="icon margin-right-xxs" aria-hidden="true">
+				<span class="docon docon-edit-copy"></span>
+			</span>
+			<span>複製</span>
+			<div class="successful-copy-alert position-absolute right-0 top-0 left-0 bottom-0 display-flex align-items-center justify-content-center has-text-success-invert has-background-success is-transparent" aria-hidden="true">
+				<span class="icon font-size-lg">
+					<span class="docon docon-check-mark"></span>
+				</span>
+			</div>
+		</button>
+	</div><pre tabindex="0" class="has-inner-focus"><code class="lang-powershell" data-author-content="wsl --install
+"><span>wsl<span class="hljs-parameter"> --install</span>
+</span></code></pre>
+<p>此命令會啟用執行 WSL 並安裝 Linux Ubuntu 發行版本所需的功能。  (<a href="https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands#install-a-specific-linux-distribution" data-linktype="relative-path">此預設散發可以變更</a>) 。</p>
+<p>第一次啟動新安裝的 Linux 發行版本時，主控台視窗隨即開啟，系統會要求您等候檔案解壓縮並儲存在您的電腦上。 未來的所有啟動時間都應該會低於一秒。</p>
+<div class="alert is-info">
+<p class="alert-title"><span class="docon docon-status-error-outline" aria-hidden="true"></span> 注意</p>
+<p>上述命令僅適用于未安裝 WSL 時，如果您執行 <code>wsl --install</code> 並看到 WSL 解說文字，請嘗試執行 <code>wsl --list --online</code> 以查看可用的散發版本清單並執行 <code>wsl --install -d &lt;DistroName&gt;</code> 以安裝散發版本。
+若要卸載 WSL，請參閱 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/troubleshooting#uninstall-legacy-version-of-wsl" data-linktype="absolute-path">卸載舊版 WSL</a> 或 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands#unregister-or-uninstall-a-linux-distribution" data-linktype="absolute-path">取消註冊或卸載 Linux 發行版本</a>。</p>
+</div>
+<h2 id="change-the-default-linux-distribution-installed" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/install#change-the-default-linux-distribution-installed" aria-labelledby="change-the-default-linux-distribution-installed"></a>變更已安裝的預設 Linux 發行版本</h2>
+<p>根據預設，已安裝的 Linux 散發套件會是 Ubuntu。 這可以使用 旗標來變更 <code>-d</code> 。</p>
+<ul>
+<li>若要變更已安裝的發行版本，請輸入： <code>wsl --install -d &lt;Distribution Name&gt;</code> 。 將 取代 <code>&lt;Distribution Name&gt;</code> 為您想要安裝的散發套件名稱。</li>
+<li>若要查看可透過線上商店下載的可用 Linux 發行版本清單，請輸入： <code>wsl --list --online</code> 或 <code>wsl -l -o</code> 。</li>
+<li>若要在初始安裝之後安裝其他 Linux 發行版本，您也可以使用 命令： <code>wsl --install -d &lt;Distribution Name&gt;</code> 。</li>
+</ul>
+<div class="alert is-success">
+<p class="alert-title"><span class="docon docon-lightbulb" aria-hidden="true"></span> 提示</p>
+<p>如果您想要從 Linux/Bash 命令列內安裝其他發行版本 (，而不是從 PowerShell 或命令提示字元) ，您必須在命令中使用.exe：或列出可用的發行版本： <code>wsl.exe --install -d &lt;Distribution Name&gt;</code><code>wsl.exe -l -o</code> 。</p>
+</div>
+<p>如果您在安裝程式期間遇到問題，請檢查 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/troubleshooting#installation-issues" data-linktype="relative-path">疑難排解指南的安裝區段</a>。</p>
+<p>若要安裝未列為可用的 Linux 發行版本，您可以使用 TAR 檔案 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/use-custom-distro" data-linktype="absolute-path">匯入任何 Linux 發行版本</a> 。 或者在某些情況下，如同 <a href="https://wsldl-pg.github.io/ArchW-docs/How-to-Setup/" data-linktype="external">Arch Linux</a>，您可以使用檔案進行安裝 <code>.appx</code> 。 您也可以建立自己的 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/build-custom-distro" data-linktype="absolute-path">自訂 Linux 發行版本</a> ，以搭配 WSL 使用。</p>
+<h2 id="set-up-your-linux-user-info" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/install#set-up-your-linux-user-info" aria-labelledby="set-up-your-linux-user-info"></a>設定 Linux 使用者資訊</h2>
+<p>安裝 WSL 之後，您必須為新安裝的 Linux 發行版本建立使用者帳戶和密碼。 若要深入瞭解 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/setup/environment#set-up-your-linux-username-and-password" data-linktype="relative-path">，請參閱設定 WSL 開發環境指南的最佳做法</a> 。</p>
+<h2 id="set-up-and-best-practices" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/install#set-up-and-best-practices" aria-labelledby="set-up-and-best-practices"></a>設定和最佳做法</h2>
+<p>建議您遵循設定<a href="https://docs.microsoft.com/zh-tw/windows/wsl/setup/environment" data-linktype="relative-path">WSL 開發環境指南的最佳做法</a>，以取得如何使用 VS Code 遠端伺服器設定已安裝 Linux 發行版本的使用者名稱和密碼 ()  (、使用基本的 WSL 命令、安裝和自訂Windows 終端機、設定 Git 版本控制、程式碼編輯和偵錯的逐步解說， 檔案儲存體、設定資料庫、掛接外部磁片磁碟機、設定 GPU 加速等良好作法。</p>
+<h2 id="check-which-version-of-wsl-you-are-running" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/install#check-which-version-of-wsl-you-are-running" aria-labelledby="check-which-version-of-wsl-you-are-running"></a>檢查您正在執行的 WSL 版本</h2>
+<p>您可以列出已安裝的 Linux 發行版本，並輸入命令，在 PowerShell 或 Windows 命令提示字元中輸入下列命令 <code>wsl -l -v</code> ，以檢查每個套件的 WSL 版本。</p>
+<p>若要在安裝新的 Linux 發行版本時，將預設版本設定為 WSL 1 或 WSL 2，請使用命令： <code>wsl --set-default-version &lt;Version#&gt;</code> ，將 取代 <code>&lt;Version#&gt;</code> 為 1 或 2。</p>
+<p>若要設定與 命令搭配 <code>wsl</code> 使用的預設 Linux 發行版本，請輸入： <code>wsl -s &lt;DistributionName&gt;</code> 或 <code>wsl --setdefault &lt;DistributionName&gt;</code> ，以您想要使用的 Linux 發行版本名稱取代 <code>&lt;DistributionName&gt;</code> 。 例如，從 PowerShell/CMD 輸入： <code>wsl -s Debian</code> 將預設散發設定為 Debian。 現在從 Powershell 執行 <code>wsl npm init</code> 將會在 Debian 中執行 <code>npm init</code> 命令。</p>
+<p>若要從 PowerShell 或 Windows 命令提示字元內執行特定的 wsl 散發套件，而不需變更您的預設散發套件，請使用命令： <code>wsl -d &lt;DistributionName&gt;</code> ，將 取代 <code>&lt;DistributionName&gt;</code> 為您想要使用的散發套件名稱。</p>
+<p>如需詳細資訊，請參閱 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands" data-linktype="relative-path">WSL 的基本命令</a>指南。</p>
+<h2 id="upgrade-version-from-wsl-1-to-wsl-2" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2" aria-labelledby="upgrade-version-from-wsl-1-to-wsl-2"></a>將版本從 WSL 1 升級至 WSL 2</h2>
+<p>使用 <code>wsl --install</code> 命令安裝的新 Linux 安裝預設會設定為 WSL 2。</p>
+<p><code>wsl --set-version</code>命令可用來將 WSL 2 降級至 WSL 1，或更新先前從 WSL 1 到 WSL 2 的 Linux 發行版本。</p>
+<p>若要查看 Linux 發行版本是否設定為 WSL 1 或 WSL 2，請使用 命令： <code>wsl -l -v</code> 。</p>
+<p>若要變更版本，請使用 命令： <code>wsl --set-version &lt;distro name&gt; 2</code> 將 取代 <code>&lt;distro name&gt;</code> 為您想要更新的 Linux 發行版本名稱。 例如， <code>wsl --set-version Ubuntu-20.04 2</code> 將 Ubuntu 20.04 發行版本設定為使用 WSL 2。</p>
+<p>如果您在可用的命令之前 <code>wsl --install</code> 手動安裝 WSL，您可能也需要啟用 WSL 2 所使用的 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/install-manual#step-3---enable-virtual-machine-feature" data-linktype="relative-path">虛擬機器選擇性元件</a> ，如果您尚未這麼做 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/install-manual#step-4---download-the-linux-kernel-update-package" data-linktype="relative-path">，請安裝核心套件</a> 。</p>
+<p>若要深入瞭解，請參閱 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands" data-linktype="relative-path">WSL 的命令參考，以取得 WSL</a> 命令清單、 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/compare-versions" data-linktype="relative-path">比較 WSL 1 和 WSL 2</a> 的指引，以取得用於工作案例的指引，或設定 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/setup/environment" data-linktype="relative-path">WSL 開發環境的最佳做法</a> ，以取得使用 WSL 設定良好開發工作流程的一般指引。</p>
+<h2 id="ways-to-run-multiple-linux-distributions-with-wsl" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/install#ways-to-run-multiple-linux-distributions-with-wsl" aria-labelledby="ways-to-run-multiple-linux-distributions-with-wsl"></a>使用 WSL 執行多個 Linux 發行版本的方式</h2>
+<p>WSL 支援執行與您想要安裝的不同 Linux 發行版本一樣多。 這包括從 <a href="https://aka.ms/wslstore" data-linktype="external">Microsoft Store</a>選擇散發套件、 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/use-custom-distro" data-linktype="relative-path">匯入自訂散發套件</a>，或 <a href="https://docs.microsoft.com/zh-tw/windows/wsl/build-custom-distro" data-linktype="relative-path">建置您自己的自訂散發套件</a>。</p>
+<p>安裝之後，有數種方式可執行 Linux 發行版本：</p>
+<ol>
+<li><a href="https://docs.microsoft.com/zh-tw/windows/terminal/get-started" data-linktype="absolute-path">安裝Windows 終端機</a><em><strong> (建議</strong></em>) 使用 Windows 終端機 支援您想要安裝的許多命令列，並可讓您在多個索引標籤或視窗窗格中開啟它們，並在多個 Linux 散發套件或其他命令列之間快速切換， (PowerShell、命令提示字元、PowerShell、Azure CLI 等) 。 您可以使用獨特的色彩配置、字型樣式、大小、背景影像和自訂鍵盤快速鍵，完全自訂終端機。 <a href="https://docs.microsoft.com/zh-tw/windows/terminal" data-linktype="absolute-path">深入了解。</a></li>
+<li>您可以流覽 Windows [開始] 功能表並輸入已安裝發行版本的名稱，直接開啟 Linux 發行版本。 例如：「Ubuntu」。 這會在自己的主控台視窗中開啟 Ubuntu。</li>
+<li>您可以從 Windows 命令提示字元或 PowerShell 輸入已安裝發行版本的名稱。 例如： <code>ubuntu</code></li>
+<li>從 Windows 命令提示字元或 PowerShell，您可以輸入下列命令，在目前的命令列內開啟預設 Linux 發行版本： <code>wsl.exe</code> 。</li>
+<li>從 Windows 命令提示字元或 PowerShell，您可以在目前的命令列內使用預設 Linux 散發套件，而不需要輸入新的 Linux 散發套件，方法是輸入： <code>wsl [command]</code> 以 <code>[command]</code> WSL 命令取代 ，例如： <code>wsl -l -v</code> 列出已安裝的散發套件，或 <code>wsl pwd</code> 查看目前目錄路徑在 wsl 中掛接的位置。 從 PowerShell，命令 <code>get-date</code> 會提供 Windows 檔案系統的日期，並提供 <code>wsl date</code> Linux 檔案系統的日期。</li>
+</ol>
+<p>您選取的方法應該取決於您執行的動作。 如果您已在 Windows 提示字元或 PowerShell 視窗中開啟 WSL 命令列，而且想要結束，請輸入命令： <code>exit</code> 。</p>
+<h2 id="want-to-try-the-latest-wsl-preview-features" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/install#want-to-try-the-latest-wsl-preview-features" aria-labelledby="want-to-try-the-latest-wsl-preview-features"></a>想要嘗試最新的 WSL 預覽功能嗎？</h2>
+<p>加入 <a href="https://insider.windows.com/getting-started" data-linktype="external">Windows 測試人員計畫</a>，嘗試 WSL 的最新功能或更新。 加入 Windows 測試人員之後，您可以選擇想要從 Windows 設定功能表內接收預覽組建的通道，以自動接收與該組建相關聯的任何 WSL 更新或預覽功能。 您可以從下列項目中選擇：</p>
+<ul>
+<li>開發通道：最新的更新，但低穩定性。</li>
+<li>Beta 通道：適用于早期採用者，比開發通道更可靠的組建。</li>
+<li>發行預覽通道：預覽下一版 Windows 上的修正程式與主要功能，使其可供一般大眾使用。</li>
+</ul>
+<h2 id="additional-resources" class="heading-anchor"><a class="anchor-link docon docon-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/install#additional-resources" aria-labelledby="additional-resources"></a>其他資源</h2>
+<ul>
+<li><a href="https://devblogs.microsoft.com/commandline/install-wsl-with-a-single-command-now-available-in-windows-10-version-2004-and-higher/" data-linktype="external">Windows 命令列部落格：使用單一命令安裝 WSL 現在可在 Windows 10 2004 版和更新版本中使用</a></li>
+</ul>
+
+							</div>
+
+							<div id="assertive-live-region" role="alert" aria-live="assertive" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<div id="polite-live-region" role="status" aria-live="polite" class="visually-hidden" aria-relevant="additions" aria-atomic="true"></div>
+							<!-- </content> -->
+
+						</main>
+
+
+
+
+						<!-- recommendations section -->
+							<section id="recommendations-section" data-bi-name="recommendations" class="display-none-print margin-bottom-md margin-bottom-none-desktop"><!---->
+			<hr class="hr">
+			<h2 class="title is-3 margin-top-sm" id="recommended-content"><!---->建議的內容<!----></h2>
+			
+		<ul id="recommendations-list" aria-live="polite" aria-relevant="additions" aria-labelledby="recommended-content" class="margin-bottom-sm">
+			<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/troubleshooting?source=recommendations" data-bi-name="recommendation-item-0">
+									<h3><!---->針對適用於 Linux 的 Windows 子系統進行疑難排解<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->提供在適用於 Linux 的 Windows 子系統上執行 Linux 時，常見錯誤和使用者所遇到問題的詳細資訊。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/setup/environment?source=recommendations" data-bi-name="recommendation-item-1">
+									<h3><!---->設定 WSL 開發環境<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->使用本設定逐步指南中的最佳做法來設定 WSL 開發環境。 瞭解如何執行 Ubuntu、Visual Studio Code或 Visual Studio、Git、Windows 認證管理員、MongoDB、MySQL、Docker 遠端容器等等。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/install-manual?source=recommendations" data-bi-name="recommendation-item-2">
+									<h3><!---->舊版 WSL 的手動安裝步驟<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->在舊版Windows上手動安裝 WSL 的逐步指示，而不是使用 wsl install 命令。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs ">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/compare-versions?source=recommendations" data-bi-name="recommendation-item-3">
+									<h3><!---->比較 WSL 1 和 WSL 2<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->WSL 2 提供 WSL 1 的優點，但會使用實際的 Linux 核心，而不是 WSL 1 之類的轉譯層，進而加快效能。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/basic-commands?source=recommendations" data-bi-name="recommendation-item-4">
+									<h3><!---->WSL 的基本命令<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->Windows 子系統 Linux 版 (WSL) 隨附之基本命令的參考。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/install-on-server?source=recommendations" data-bi-name="recommendation-item-5">
+									<h3><!---->在 Windows 伺服器上安裝 Linux 子系統<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->了解如何在 Windows Server 上安裝 Linux 子系統。 WSL 可在 Windows Server 2019 (版本 1709) 和更新版本上安裝。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/tutorials/gui-apps?source=recommendations" data-bi-name="recommendation-item-6">
+									<h3><!---->使用 WSL 執行 Linux GUI 應用程式<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->瞭解 WSL 如何支援執行 Linux GUI 應用程式。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+					<li class="margin-top-xs expandable">
+						<article class="card">
+							<div class="card-content">
+								<a class="card-content-title stretched-link" href="https://docs.microsoft.com/zh-tw/windows/wsl/tutorials/wsl-containers?source=recommendations" data-bi-name="recommendation-item-7">
+									<h3><!---->在 WSL 上使用 Docker 容器進行開始<!----></h3>
+								</a>
+								<p class="card-content-description line-clamp-3"><!---->瞭解如何在 Windows 子系統 Linux 版 上設定 Docker 容器。<!----></p>
+							</div>
+						</article>
+					</li>
+				<!---->
+		</ul>
+		
+				<div class="buttons buttons-centered has-background-linethrough">
+					
+		<button aria-expanded="false" data-show-more="" class="button button-sm margin-bottom-none show-more-button" aria-controls="recommendations-list" data-bi-name="show-more-btn">
+			<span class="show-more-text"><!---->顯示較多<!----></span>
+			<span class="icon" aria-hidden="true">
+				<span class="expanded-indicator docon docon-chevron-down-light"></span>
+			</span>
+		</button>
+	
+				</div>
+		  
+	
+		<!----></section>
+							<section id="right-rail-recommendations-mobile" data-bi-name="recommendations" class="display-none-desktop margin-top-xxs" hidden=""></section>
+						<!-- end recommendations section -->
+
+							<section id="right-rail-learning-resources-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="learning-resources-card" hidden=""></section>
+							<section id="right-rail-qna-mobile" class="display-none-desktop margin-top-xxs" data-bi-name="qna-link-card" hidden=""></section>
+
+						<!-- feedback section -->
+						<!-- end feedback section -->
+
+						<!-- feedback report section -->
+						<!-- end feedback report section -->
+
+							<section id="right-rail-events-mobile" class="display-none-desktop margin-top-xs" data-bi-name="events-card" hidden=""></section>
+
+						<div class="border-top is-visible-interactive has-default-focus margin-top-sm ">
+
+
+
+	<footer id="footer-interactive" data-bi-name="footer" class="footer-layout">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link button button-clear flex-shrink-0" href="https://docs.microsoft.com/zh-tw/locale?target=https://docs.microsoft.com/zh-tw/windows/wsl/install" data-bi-name="select-locale" aria-label="內容語言選取器。 目前設定為中文 (繁體)。">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">中文 (繁體)</span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu-interactive" aria-expanded="false" title="佈景主題" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>佈景主題</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu-interactive" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light margin-right-xxs">
+						<span class="theme-selector-icon css-variable-support border display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+淺色					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+深色					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+高對比					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden=""></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/zh-tw/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">部落格</a></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/zh-tw/contribute/" data-bi-name="contributorGuide">參與</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隱私權與 Cookie</a></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/zh-tw/legal/termsofuse" data-bi-name="termsofuse">使用規定</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">商標</a></li>
+		<li>© Microsoft 2022</li>
+	</ul>
+</footer>
+						</div>
+
+					</div>
+
+						<div class="font-size-sm right-container column is-4-desktop display-none display-block-desktop" data-bi-name="pageactions" role="complementary" aria-label="頁面動作">
+
+							<div id="affixed-right-container" class="margin-top-sm-tablet doc-outline is-vertically-scrollable" data-bi-name="right-column">
+								<section id="right-rail-events" data-bi-name="events-card" class="margin-bottom-xxs" hidden=""></section>
+								<section id="right-rail-recommendations" data-bi-name="recommendations" class="margin-bottom-xxs" hidden=""></section>
+								<nav id="side-doc-outline" data-bi-name="intopic toc" role="navigation" aria-label="文章大綱"><!---->
+		<article class="border border-radius-lg overflow-hidden ">
+			<div class="padding-block-xxs padding-inline-xs font-weight-semibold border-bottom font-size-md display-flex align-items-center background-color-body-medium">
+		<span class="icon margin-right-xxs">
+		<span class="docon docon-bulleted-list-three-items"></span>
+	</span><span><!---->本文內容<!----></span>
+	</div> 
+		<ul id="right-rail-in-this-article-list" aria-live="polite" aria-relevant="additions" class="padding-xxs">
+			<!---->
+					<li class="">
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#prerequisites"><!---->先決條件<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#install-wsl-command"><!---->安裝 WSL 命令<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#change-the-default-linux-distribution-installed"><!---->變更已安裝的預設 Linux 發行版本<!----></a>
+					</li>
+				<!---->
+					<li class="">
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#set-up-your-linux-user-info"><!---->設定 Linux 使用者資訊<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#set-up-and-best-practices"><!---->設定和最佳做法<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#check-which-version-of-wsl-you-are-running"><!---->檢查您正在執行的 WSL 版本<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#upgrade-version-from-wsl-1-to-wsl-2"><!---->將版本從 WSL 1 升級至 WSL 2<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#ways-to-run-multiple-linux-distributions-with-wsl"><!---->使用 WSL 執行多個 Linux 發行版本的方式<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#want-to-try-the-latest-wsl-preview-features"><!---->想要嘗試最新的 WSL 預覽功能嗎？<!----></a>
+					</li>
+				<!---->
+					<li class="expandable">
+						<a href="https://docs.microsoft.com/zh-tw/windows/wsl/install#additional-resources"><!---->其他資源<!----></a>
+					</li>
+				<!---->
+		</ul>
+	 <div class="border-top"><!---->
+		<button aria-expanded="false" data-show-more="" class="button button-clear button-block has-inner-focus" aria-controls="right-rail-in-this-article-list" data-bi-name="show-more-btn">
+			<span class="show-more-text"><!---->顯示較多<!----></span>
+			<span class="icon" aria-hidden="true">
+				<span class="expanded-indicator docon docon-chevron-down-light"></span>
+			</span>
+		</button>
+	<!----></div>
+		</article>
+	<!----></nav>
+								<section id="right-rail-learning-resources" class="margin-top-xxs" data-bi-name="learning-resources-card" hidden=""></section>
+								<section id="right-rail-qna" class="margin-top-xxs" data-bi-name="qna-link-card" hidden=""></section>
+							</div>
+						</div>
+
+				</div>
+				<!--end of div.columns -->
+
+			</section>
+			<!--end of .primary-holder -->
+
+			<!-- interactive container -->
+			<aside id="interactive-container" class="interactive-container is-visible-interactive column has-body-background-dark ">
+			</aside>
+			<!-- end of interactive container -->
+		</div>
+
+	</div>
+	<!--end of .mainContainer -->
+
+	<section class="border-top has-default-focus is-hidden-interactive margin-top-sm ">
+
+
+
+	<footer id="footer" data-bi-name="footer" class="footer-layout uhf-container has-padding" role="contentinfo">
+	<div class="display-flex is-full-height padding-right-lg-desktop">
+			<a data-mscc-ic="false" class="locale-selector-link button button-clear flex-shrink-0" href="https://docs.microsoft.com/zh-tw/locale?target=https://docs.microsoft.com/zh-tw/windows/wsl/install" data-bi-name="select-locale" aria-label="內容語言選取器。 目前設定為中文 (繁體)。">
+					<span class="icon" aria-hidden="true">
+						<span class="docon docon-world"></span>
+					</span>
+					<span class="local-selector-link-text">中文 (繁體)</span></a>
+		<div class="margin-inline-xs flex-shrink-0">
+<div class="dropdown has-caret-up">
+	<button class="dropdown-trigger button button-clear button-sm has-inner-focus theme-dropdown-trigger" aria-controls="theme-menu" aria-expanded="false" title="佈景主題" data-bi-name="theme">
+		<span class="icon">
+			<span class="docon docon-sun" aria-hidden="true"></span>
+		</span>
+		<span>佈景主題</span>
+	</button>
+	<div class="dropdown-menu" id="theme-menu" role="menu">
+		<ul class="theme-selector padding-xxs" role="none">
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start is-selected" data-theme-to="light" aria-pressed="true">
+					<span class="theme-light margin-right-xxs">
+						<span class="theme-selector-icon css-variable-support border display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+淺色					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="dark" aria-pressed="false">
+					<span class="theme-dark margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+深色					</span>
+				</button>
+			</li>
+			<li class="theme display-block" role="menuitem">
+				<button class="button button-clear button-sm theme-control button-block justify-content-flex-start" data-theme-to="high-contrast" aria-pressed="false">
+					<span class="theme-high-contrast margin-right-xxs">
+						<span class="border theme-selector-icon css-variable-support display-inline-block has-body-background" aria-hidden="true">
+							<svg class="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 14">
+								<rect width="22" height="14" class="has-fill-body-background"></rect>
+								<rect x="5" y="5" width="12" height="4" class="has-fill-secondary"></rect>
+								<rect x="5" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="8" y="2" width="2" height="1" class="has-fill-secondary"></rect>
+								<rect x="11" y="2" width="3" height="1" class="has-fill-secondary"></rect>
+								<rect x="1" y="1" width="2" height="2" class="has-fill-secondary"></rect>
+								<rect x="5" y="10" width="7" height="2" rx="0.3" class="has-fill-primary"></rect>
+								<rect x="19" y="1" width="2" height="2" rx="1" class="has-fill-secondary"></rect>
+							</svg>
+						</span>
+					</span>
+					<span>
+高對比					</span>
+				</button>
+			</li>
+		</ul>
+	</div>
+</div>
+		</div>
+	</div>
+	<ul class="links" data-bi-name="footerlinks">
+		<li class="manage-cookies-holder" hidden=""></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/zh-tw/previous-versions/" data-bi-name="archivelink">Previous Versions</a></li>
+				<li><a data-mscc-ic="false" href="https://techcommunity.microsoft.com/t5/microsoft-learn-blog/bg-p/MicrosoftLearnBlog" data-bi-name="bloglink">部落格</a></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/zh-tw/contribute/" data-bi-name="contributorGuide">參與</a></li>
+					<li><a data-mscc-ic="false" href="https://go.microsoft.com/fwlink/?LinkId=521839" data-bi-name="privacy">隱私權與 Cookie</a></li>
+				<li><a data-mscc-ic="false" href="https://docs.microsoft.com/zh-tw/legal/termsofuse" data-bi-name="termsofuse">使用規定</a></li>
+				<li><a data-mscc-ic="false" href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" data-bi-name="trademarks">商標</a></li>
+		<li>© Microsoft 2022</li>
+	</ul>
+</footer>
+	</section>
+
+	<div id="action-panel" role="region" aria-label="動作面板" class="action-panel has-default-focus" tabindex="-1"></div>
+
+
+</body></html>
